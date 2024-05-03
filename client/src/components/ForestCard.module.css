@@ -1,0 +1,28 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  background: rgb(255, 255, 255);
+  padding: 1rem;
+  border-radius: 1rem;
+  width: fit-content;
+  box-shadow: var(--shadow-2);
+  transition: all 0.25s ease-out;
+}
+.card:hover {
+  transform: translate(0, -0.5rem);
+}
+
+.drawingPreview{
+  /* transform: scale(0.5); */
+  width: 100vw;
+  height: 100vh;
+}
+.drawingPreviewScale{
+  transform-origin: top left;
+  transform: scale(0.3);
+  width: 30vw;
+  height: 30vh;
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forests",
+  "info": {
+    "singularName": "forest",
+    "pluralName": "forests",
+    "displayName": "Forest",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "parameters": {
+      "type": "json"
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "forests"
+    }
+  }
+}

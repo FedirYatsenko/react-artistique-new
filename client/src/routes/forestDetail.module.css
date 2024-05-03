@@ -1,0 +1,46 @@
+.container{
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: 60vw auto;
+  gap:1rem;
+  max-width: 80vw;
+  margin: auto;
+}
+
+.drawingPreview{
+  /* transform: scale(0.5); */
+  width: 100vw;
+  height: 100vh;
+}
+.drawingPreviewScale{
+  transform-origin: top left;
+  transform: scale(0.6);
+  width: 60vw;
+  height: 60vh;
+}
+
+.title{
+  text-align: center;
+  margin: auto;
+  font-size: 2rem;
+  font-family: "Geograph-SemiBold", sans-serif;
+  margin-top: 2rem;
+}
+.list {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(32vw, 1fr) );
+  row-gap: 4rem;
+  height: 100%;
+  max-width: 70rem;
+  margin: auto;
+  place-items: center;
+}
+
+li{
+  width: 32vw;
+  height: 32vh;
+}
+
+
+
+

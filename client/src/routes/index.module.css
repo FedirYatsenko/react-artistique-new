@@ -1,0 +1,45 @@
+.heroContainer{
+  background-color: white;
+  background-image: url(../assets/images/hero.png);
+  background-size: 80vh;
+  background-position: bottom right;
+  height: 100vh;
+  margin-top: -8rem;
+  padding:8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.title{
+  font-size: 4rem;
+  margin-bottom: -1rem;
+}
+.buttonsContainer{
+  display: flex;
+  gap: 1rem;
+}
+.button {
+  margin: 0;
+  font-size: 1.2rem;
+  border-radius: 10rem;
+  padding: 1.5rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  background-color: #d9d9d9;
+  text-decoration: none;
+  color: #0E1F33;
+  transition: all 0.25s ease-out;
+  font-family: 'Geograph-SemiBold', sans-serif;
+}
+.button:hover {
+  background-color: var(--green);
+  filter: saturate(60%) brightness(120%);
+}
+
+.buttonPrimary{
+  background-color: var(--green);
+}
+.buttonPrimary:hover {
+  filter: saturate(60%) brightness(120%);
+}

@@ -1,0 +1,82 @@
+.container {
+  position: absolute;
+  top: 0;
+  height: 8rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  align-items: center;
+  font-family: 'Geograph-SemiBold', sans-serif;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-2);
+}
+
+.visuallyHidden{
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.logo {
+  height: 5rem;
+  transition: all 0.25s ease-out;
+}
+.logo:hover {
+  filter: saturate(60%) brightness(120%);
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  gap: 7rem;
+}
+.navbutton{
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #0E1F33;
+  transition: all 0.3s ease-out;
+  text-decoration-color: var(--green);
+}
+.navbutton:hover{
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+  text-decoration-color: var(--green);
+}
+
+.button {
+  margin: 0;
+  font-size: 1.2rem;
+  border-radius: 10rem;
+  padding: 1.5rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  background-color: #d9d9d9;
+  text-decoration: none;
+  color: #0E1F33;
+  transition: all 0.25s ease-out;
+}
+
+.buttonPrimary{
+  background-color: var(--green);
+}
+.buttonPrimary:hover {
+  filter: saturate(60%) brightness(120%);
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+
+
+
+
+

@@ -1,0 +1,83 @@
+@import 'open-props/style';
+@import 'open-props/normalize';
+@import 'open-props/buttons';
+
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+:root {
+  --green: #81bd7d;
+  --blue:#0E1F33;
+}
+
+body {
+  color: var(--blue);
+  font-family: 'Geograph', sans-serif;
+}
+
+main{
+  padding-top: 8rem;
+}
+
+ol, ul, li
+ {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+input {
+  padding: var(--size-relative-3)
+}
+
+@font-face {
+  font-family: 'Geograph';
+  src: url('../assets/fonts/Geograph-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Geograph';
+  src: url('../assets/fonts/Geograph-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Geograph-SemiBold';
+  src: url('../assets/fonts/Geograph-Medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Geograph';
+  src: url('../assets/fonts/Geograph-Italic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Geograph';
+  src: url('../assets/fonts/Geograph-BoldItalic.otf') format('opentype');
+  font-weight: bold;
+  font-style: italic;
+}
