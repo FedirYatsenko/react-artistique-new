@@ -82,7 +82,7 @@ const Gallery = () => {
       <ul className={styles.list} id="gallery">
         {sortedForests.length > 0 ? (
           sortedForests.map((forest) => (
-            <li key={forest.id}>
+            <li key={forest.id} className={styles.list_element}>
               <Link to={`/forest/${forest.id}`}>
                 <ForestCard forest={forest} />
               </Link>

@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import ErrorField from "../../components/ErrorField";
 import { register } from "../../services/auth";
-import formstyles from "../../styles/forms.module.css";
 import style from "./login.module.css";
 
 const action = async ({ request }) => {
@@ -56,13 +55,11 @@ const Register = () => {
 
   return (
     <section>
-      <hgroup className={style.header}>
+      <div className={style.container}>
         <h2>Sign up</h2>
-        <p>Get access to all the features</p>
-      </hgroup>
       <Form method="post">
         <input type="hidden" name="redirectTo" value={from} />
-        <div className={formstyles.formGroup}>
+        <div className={style.formGroup}>
           <label htmlFor="email">Username</label>
           <input
             type="text"
@@ -74,7 +71,7 @@ const Register = () => {
           />
           <ErrorField data={actionData} field="username" />
         </div>
-        <div className={formstyles.formGroup}>
+        <div className={style.formGroup}>
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -86,7 +83,7 @@ const Register = () => {
           />
           <ErrorField data={actionData} field="email" />
         </div>
-        <div className={formstyles.formGroup}>
+        <div className={style.formGroup}>
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -98,17 +95,18 @@ const Register = () => {
           />
           <ErrorField data={actionData} field="password" />
         </div>
-        <div className={formstyles.formGroup}>
+        <div className={style.buttons_container}>
           <ErrorField data={actionData} field="general" />
           <button
             type="submit"
             disabled={isLoggingIn}
-            className={actionData && actionData.error ? style.shake : null}
+            className={`${style.button} ${style.buttonLog} ${actionData && actionData.error ? style.shake : null}`}
           >
             {isLoggingIn ? "Sending..." : "Sign up"}
           </button>
         </div>
       </Form>
+      </div>
     </section>
   );
 };

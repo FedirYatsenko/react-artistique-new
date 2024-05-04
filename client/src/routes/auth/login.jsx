@@ -6,7 +6,6 @@ import {
   useLocation,
   useNavigation,
 } from "react-router-dom";
-import formstyles from "../../styles/forms.module.css";
 import style from "./login.module.css";
 import { authenticate, getAuthData } from "../../services/auth";
 import ErrorField from "../../components/ErrorField";
@@ -25,7 +24,7 @@ const action = async ({ request }) => {
 
   if (!email) {
     return {
-      error: { email: "You must provide a email to log in" },
+      error: { email: "You must provide an email to log in" },
     };
   }
 
@@ -59,12 +58,10 @@ const Login = () => {
 
   return (
     <section>
-      <hgroup className={style.header}>
-        <h2>Sign in</h2>
-        <p>Get access to all the features</p>
-      </hgroup>
+      <div className={style.container}>
+        <h2>Log in</h2>
       <Form method="post">
-        <div className={formstyles.formGroup}>
+        <div className={style.formGroup}>
           <input type="hidden" name="redirectTo" value={from} />
           <label htmlFor="email">Email</label>
           <input
@@ -77,7 +74,7 @@ const Login = () => {
           />
           <ErrorField data={actionData} field="email" />
         </div>
-        <div className={formstyles.formGroup}>
+        <div className={style.formGroup}>
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -89,20 +86,22 @@ const Login = () => {
           />
           <ErrorField data={actionData} field="password" />
         </div>
-        <div className={formstyles.formGroup}>
+        <div className={style.buttons_container}>
           <ErrorField data={actionData} field="general" />
           <button
             type="submit"
             disabled={isLoggingIn}
-            className={actionData && actionData.error ? style.shake : null}
+            className={`${style.button} ${style.buttonLog} ${actionData && actionData.error ? style.shake : null}`}
           >
             {isLoggingIn ? "Logging in..." : "Login"}
           </button>
+          <p className={style.small_text}>Dont have an account yet?</p>
           <Link to="/auth/register" className={style.register}>
-            ...or Sign up!
+            <button className={`${style.button} ${style.buttonSign}`}>Sign up</button>
           </Link>
         </div>
       </Form>
+      </div>
     </section>
   );
 };

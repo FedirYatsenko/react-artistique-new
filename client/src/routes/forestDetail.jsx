@@ -31,25 +31,39 @@ const ForestDetail = () => {
       </div>
       </div>
       
-      <div className={styles.row}>
+      <div>
+        <div className={styles.buttonsBlock}>
+        {user && user.id === forest.owner.data.id && (
+          <>
+          <Link to={`/forest/${forest.id}/edit`}>
+            <p className={`${styles.button} ${styles.buttonEdit}`}>
+              Edit
+            </p>
+          </Link>
+            <p onClick={() => handleDelete(forest.id)} className={`${styles.button} ${styles.buttonDelete}`}>
+            Delete
+          </p>
+          </>
+        )}
+        </div>
         <dl>
           {forest.owner.data && (
             <>
               <dt>Created by</dt>
               <dd>
                 {user && user.id === forest.owner.data.id ? (
-                  <Link to={`/auth/profile`}>
+                  <Link to={`/auth/profile`} className={styles.link}>
                     you
                   </Link>
                   ) : (
-                  <Link to={`/user/${forest.owner.data.id}`}>
+                  <Link to={`/user/${forest.owner.data.id}`} className={styles.link}>
                     {forest.owner.data.attributes.username}
                   </Link>
                 )}
               </dd>
             </>
           )}
-        </dl>
+        
         <dt>Season</dt>
           <dd>{forest.attributes.parameters.parameters.season}</dd>
         <dt>Color variability</dt>
@@ -61,16 +75,7 @@ const ForestDetail = () => {
           forest.attributes.parameters.parameters.size < 14 ? "Medium" :
           forest.attributes.parameters.parameters.size < 17 ? "Big" : "Large" 
           }</dd>
-        <div className={styles.buttonsBlock}>
-        {user && user.id === forest.owner.data.id && (
-          <>
-          <Link to={`/forest/${forest.id}/edit`}>Edit forest</Link>
-            <button onClick={() => handleDelete(forest.id)}>
-            Delete
-          </button>
-          </>
-        )}
-        </div>
+        </dl>
       </div>
       </div>
       {
@@ -84,7 +89,7 @@ const ForestDetail = () => {
           .filter(otherForest => otherForest.owner.data.id === forest.owner.data.id && otherForest.id !== forest.id)
           .reverse()
           .map((otherForest) => (
-            <li key={otherForest.id}>
+            <li className={styles.list_element} key={otherForest.id}>
               <Link to={`/forest/${otherForest.id}`}>
                 <ForestCard forest={otherForest} />
               </Link>

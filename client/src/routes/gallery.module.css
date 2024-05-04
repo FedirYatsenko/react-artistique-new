@@ -5,7 +5,7 @@
     height: 100%;
 }
 
-li{
+.list_element{
     width: 32vw;
     height: 32vh;
 }

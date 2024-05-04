@@ -1,0 +1,69 @@
+.data_container{
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+    font-size: 1.15rem;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    background: rgb(255, 255, 255);
+    padding: 2rem 3rem;
+    border-radius: 2rem;
+    box-shadow: var(--shadow-3);
+    width: fit-content;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+.logoutButton{
+    margin-top: 1.5rem;
+    background-color: var(--green);
+    color: var(--white);
+    padding: 0.6rem;
+    width: 100%;
+    border-radius: 3rem;
+    text-align: center;
+    transition: all 0.2s ease-out;
+    background-color: #d9d9d9;
+    text-transform: uppercase;
+    font-family: "Geograph-SemiBold", sans-serif;
+    cursor: pointer;
+    border: none;
+}
+.logoutButton:hover{
+    background-color: var(--green);
+}
+
+.profile_gallery_container{
+  max-width: 70rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title{
+    text-align: center;
+}
+.list {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(32vw, 1fr) );
+  row-gap: 4rem;
+  column-gap: 0.5rem;
+  height: 100%;
+  max-width: 72rem;
+}
+
+.list_element{
+  width: 32vw;
+  height: 32vh;
+}
+.noForests{
+    margin-top: 0.7rem;
+    text-align: center;
+}
+
