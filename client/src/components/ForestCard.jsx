@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import styles from "./ForestCard.module.css";
 import Drawing from "./Drawing";
 
@@ -11,9 +10,7 @@ const ForestCard = ({ forest }) => {
       <Drawing {...forest.attributes.parameters.parameters} />
       </div>
       </div>
-      <p>{forest.attributes.parameters.parameters.season} forest by <Link to={`/user/${forest.owner.data.id}`}>
-        {forest.owner.data.attributes.username}
-      </Link></p>
+      <p><span className={styles.capitalize}>{forest.attributes.parameters.parameters.season}</span> forest by {forest.owner.data.attributes.username}</p>
     </article>
   );
 };

@@ -10,13 +10,17 @@
   width: fit-content;
   box-shadow: var(--shadow-2);
   transition: all 0.25s ease-out;
+  color: var(--blue);
 }
+.capitalize {
+  text-transform: capitalize;
+}
+
 .card:hover {
   transform: translate(0, -0.5rem);
 }
 
 .drawingPreview{
-  /* transform: scale(0.5); */
   width: 100vw;
   height: 100vh;
 }

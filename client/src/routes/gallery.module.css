@@ -61,3 +61,25 @@ li{
 .textAdd:hover{
     text-decoration: none;
 }
+
+
+.filtersContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+.filterText{
+    font-size: 1.2rem;
+    margin-right: -1.5rem;
+}
+.filterDroplist{
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--green);
+}
+.noForests{
+    margin-top: 2rem;
+}

@@ -1,5 +1,5 @@
 import { getForestById, getForests, deleteForest } from "../services/forest";
-import { Link, useLoaderData, useRouteLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useRouteLoaderData, useNavigate } from "react-router-dom";
 import ForestCard from "../components/ForestCard";
 import styles from "./forestDetail.module.css";
 import Drawing from "../components/Drawing";
@@ -15,6 +15,12 @@ const ForestDetail = () => {
   const { forest } = useLoaderData();
   const { forests } = useLoaderData();
   const { user } = useRouteLoaderData("root");
+  const navigate = useNavigate();
+
+  const handleDelete = async () => {
+    await deleteForest(forest.id);
+    navigate("/gallery");
+  }
 
   return (
     <div>
@@ -33,7 +39,7 @@ const ForestDetail = () => {
               <dd>
                 {user && user.id === forest.owner.data.id ? (
                   <Link to={`/auth/profile`}>
-                    You
+                    you
                   </Link>
                   ) : (
                   <Link to={`/user/${forest.owner.data.id}`}>
@@ -59,11 +65,9 @@ const ForestDetail = () => {
         {user && user.id === forest.owner.data.id && (
           <>
           <Link to={`/forest/${forest.id}/edit`}>Edit forest</Link>
-          <Link to={`/gallery`}>
-            <button onClick={() => deleteForest(forest.id)}>
-          Delete
+            <button onClick={() => handleDelete(forest.id)}>
+            Delete
           </button>
-          </Link>
           </>
         )}
         </div>
